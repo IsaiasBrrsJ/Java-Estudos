@@ -1,0 +1,4 @@
+Estudante{id=fd840372-3c01-4cf8-8d6c-5839aa1b0a37, name='isaias', cellPhone='36596', address='asdasd', responsible='asdasd'}
+Turma{id=4d898b7b-56c9-4c81-9aa2-e1b743b59b94, codigo=123, turma='q13qw', capacidade=30}
+Turma{id=a97fd20f-0187-43f2-8592-58baa5c55c51, codigo=123, turma='aqa', capacidade=20}
+Estudante{id=9011a62e-c48c-466f-947c-4b213fe531ec, name='jb', cellPhone='6666', address='asdasd', responsible='52'}

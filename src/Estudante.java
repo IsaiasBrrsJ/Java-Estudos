@@ -67,7 +67,7 @@ public class Estudante {
 			address = scanner.next();
 			System.out.print("");
 			System.out.print("responsible: ");
-			responsible = scanner.nextLine();
+			responsible = scanner.next();
 			System.out.print("");
 
 			return  new Estudante(name, cellPhone, address, responsible);

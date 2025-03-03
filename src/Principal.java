@@ -1,9 +1,13 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Principal {
 
- public static void main(String[] args) throws InterruptedException {
+ public static void main(String[] args) throws InterruptedException, IOException {
 
 //	 var conta = new Conta();
 //	 var reader = new Scanner(System.in);
@@ -35,29 +39,27 @@ public class Principal {
 	 System.out.println("\t============================");
 	 System.out.println("\tWelcome To School System ADM");
 	 System.out.println("\t============================");
+    var path = Path.of("base.txt");
+	if(!Files.exists(path)){
+		Files.createFile(path);
+	}
 
 	 var student = new ArrayList<Estudante>();
 	 var turma = new ArrayList<Turma>();
-	 var read = new Scanner(System.in);
+
 	 var option =-1;
 
 	 do{
 
-		 System.out.println("\t[ 1 ] - Cadatrar Turma");
-		 System.out.println("\t[ 2 ] - Cadatrar Estudante");
-		 System.out.println("\t[ 3 ] - Listar Turmas");
-		 System.out.println("\t[ 4 ] - Listar Estudantes");
-		 System.out.println("\t[ 5 ] - Sair");
-		 System.out.print("Opcao: ");
-         option = read.nextInt();
-
+		  option = ExibirMenu();
 		 switch (option){
 			 case 1:
-				 turma
-						 .add(Turma.Factories.Create());
+				 var turm =Turma.Factories.Create();
+				 var result = Save(path, turm);
 				 break;
 			 case 2:
-		 		student.add(Estudante.Factories.Create());
+		 		 var studen = Estudante.Factories.Create();
+				  var resul = Save(path, studen);
 				 break;
 			 case 3:
 				 ListarCadastros(turma);
@@ -73,8 +75,34 @@ public class Principal {
 	 	Thread.sleep(220);
 
 	 }while(option != 5);
+
+
  }
- public static  <T> void ListarCadastros(ArrayList<T> list){
+ private static <T>  boolean Save(Path path, T data) throws IOException {
+
+	 try {
+		 Files.writeString (path, data.toString()+ "\n",
+				 StandardOpenOption.APPEND);
+	    return true;
+	 }
+	 catch (IOException ex){
+		return false;
+	 }
+ }
+ private static int ExibirMenu(){
+	 var read = new Scanner(System.in);
+
+	 System.out.println("\t[ 1 ] - Cadatrar Turma");
+	 System.out.println("\t[ 2 ] - Cadatrar Estudante");
+	 System.out.println("\t[ 3 ] - Listar Turmas");
+	 System.out.println("\t[ 4 ] - Listar Estudantes");
+	 System.out.println("\t[ 5 ] - Sair");
+	 System.out.print("Opcao: ");
+	 var option = read.nextInt();
+
+	 return  option;
+ }
+ private static  <T> void ListarCadastros(ArrayList<T> list){
 
 	 if(!list.isEmpty()) {
 		 for (T item : list){

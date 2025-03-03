@@ -6,15 +6,18 @@ public class Person {
 	private String name;
 	private String email;
 
-	private Person(String name, String email) {
+	private Person(String name, String email)
+	{
 		this.id = UUID.randomUUID();
 		this.name = name;
 		this.email = email;
 	}
-	public UUID getId() {
+	public UUID getId()
+	{
 		return id;
 	}
-	public String getName() {
+	public String getName()
+	{
 		return name;
 	}
 	public String getEmail() {
