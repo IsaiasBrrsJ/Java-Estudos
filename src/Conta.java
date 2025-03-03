@@ -9,7 +9,6 @@ public class Conta {
 boolean Sacar(double valorSaque){
 
   var taxaSaque = 0.02;
-
   if(valorSaque > (saldo + taxaSaque))
     return false;
 

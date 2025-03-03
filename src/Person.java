@@ -11,19 +11,15 @@ public class Person {
 		this.name = name;
 		this.email = email;
 	}
-
 	public UUID getId() {
 		return id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public String getEmail() {
 		return email;
 	}
-
 	public  class  Factories{
 		public static Person Create(String name, String email){
 			return  new Person(name, email);

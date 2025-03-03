@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.UUID;
 
 public class Estudante {
@@ -19,6 +20,7 @@ public class Estudante {
 	 public void  UpdateCellPhone(String cellPhone){
 		this.cellPhone = cellPhone;
  	}
+
 	public String getName() {
 		return name;
 	}
@@ -47,7 +49,27 @@ public class Estudante {
 	}
 
 	public static class Factories{
-		public static  Estudante Create(String name, String cellPhone, String address, String responsible){
+		public static  Estudante Create(){
+
+			var scanner = new Scanner(System.in);
+			String name;
+			String cellPhone;
+			String address;
+			String responsible;
+
+			System.out.print("name: ");
+			name = scanner.next();
+			System.out.print("");
+			System.out.print("cellphone: ");
+			cellPhone = scanner.next();
+			System.out.print("");
+			System.out.print("address: ");
+			address = scanner.next();
+			System.out.print("");
+			System.out.print("responsible: ");
+			responsible = scanner.nextLine();
+			System.out.print("");
+
 			return  new Estudante(name, cellPhone, address, responsible);
 		}
 	}

@@ -54,11 +54,10 @@ public class Principal {
 		 switch (option){
 			 case 1:
 				 turma
-					 .add(CreateTurma(read));
+						 .add(Turma.Factories.Create());
 				 break;
 			 case 2:
-		 		student
-					  .add(CreateStudent(read));
+		 		student.add(Estudante.Factories.Create());
 				 break;
 			 case 3:
 				 ListarCadastros(turma);
@@ -81,48 +80,10 @@ public class Principal {
 		 for (T item : list){
 			 System.out.println(item.toString());
 		 }
+		 return;
 	 }
-	 else
-		 System.out.println("Lista vazia");
+
+	 System.out.println("Lista vazia");
  }
- public  static Turma CreateTurma(Scanner scanner){
 
-	 int codigo;
-	 String turma;
-	 int capacidade;
-
-	 System.out.print("Codigo: ");
-	 codigo = scanner.nextInt();
-	 System.out.print("");
-	 System.out.print("Turma: ");
-	 turma = scanner.next();
-	 System.out.print("");
-	 System.out.print("Capacidade: ");
-	 capacidade = scanner.nextInt();
-
-	 return Turma.Factories.Create(codigo, turma, capacidade);
- }
-  public static  Estudante CreateStudent( Scanner scanner){
-
-	  String name;
-	  String cellPhone;
-	  String address;
-	  String responsible;
-
-	  System.out.print("name: ");
-	  name = scanner.next();
-	  System.out.print("");
-	  System.out.print("cellphone: ");
-	  cellPhone = scanner.next();
-	  System.out.print("");
-	  System.out.print("address: ");
-	  address = scanner.next();
-	  System.out.print("");
-	  System.out.print("responsible: ");
-	  responsible = scanner.next();
-	  System.out.print("");
-
-
-	  return  Estudante.Factories.Create(name, cellPhone, address, responsible);
-  }
 }

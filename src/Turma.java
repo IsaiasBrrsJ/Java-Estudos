@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.UUID;
 
 public class Turma {
@@ -46,7 +47,22 @@ public class Turma {
 	}
 
 	public static  class  Factories{
-		 public static  Turma Create(int codigo, String turma, int capacidade){
+		 public static  Turma Create(){
+
+			 var scanner = new Scanner(System.in);
+			 int codigo;
+			 String turma;
+			 int capacidade;
+
+			 System.out.print("Codigo: ");
+			 codigo = scanner.nextInt();
+			 System.out.print("");
+			 System.out.print("Turma: ");
+			 turma = scanner.next();
+			 System.out.print("");
+			 System.out.print("Capacidade: ");
+			 capacidade = scanner.nextInt();
+
 			return  new Turma(codigo, turma, capacidade);
 		}
    }
