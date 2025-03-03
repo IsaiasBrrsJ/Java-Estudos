@@ -1,3 +1,5 @@
+package br.com.escolinha.gestaoescolar.funcionalidades;
+
 import java.util.UUID;
 
 public class Person {

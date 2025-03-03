@@ -1,3 +1,8 @@
+package br.com.escolinha.gestaoescolar;
+
+import br.com.escolinha.gestaoescolar.dominio.Estudante;
+import br.com.escolinha.gestaoescolar.dominio.Turma;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,7 +14,7 @@ public class Principal {
 
  public static void main(String[] args) throws InterruptedException, IOException {
 
-//	 var conta = new Conta();
+//	 var conta = new br.com.escolinha.gestaoescolar.funcionalidades.Conta();
 //	 var reader = new Scanner(System.in);
 //
 //	 System.out.print("Informe o valor para sacar: ");
@@ -21,9 +26,9 @@ public class Principal {
 //	 if(!isValid)
 //		 System.out.println("Invalid");
 //
-//	 var person = Person.Factories.Create("Isaias", "Barros@gmail.com");
-//     var personII = Person.Factories.Create("Barros", "isaias@gmail.com");
-//	 var list = new ArrayList<Person>();
+//	 var person = br.com.escolinha.gestaoescolar.funcionalidades.Person.Factories.Create("Isaias", "Barros@gmail.com");
+//     var personII = br.com.escolinha.gestaoescolar.funcionalidades.Person.Factories.Create("Barros", "isaias@gmail.com");
+//	 var list = new ArrayList<br.com.escolinha.gestaoescolar.funcionalidades.Person>();
 //
 //	 list.add(personII);
 //	 list.add(person);
@@ -40,21 +45,21 @@ public class Principal {
 	 System.out.println("\tWelcome To School System ADM");
 	 System.out.println("\t============================");
     var path = Path.of("base.txt");
-	if(!Files.exists(path)){
-		Files.createFile(path);
-	}
 
+	 if(!Files.exists(path)){
+		 Files.createFile(path);
+	 }
 	 var student = new ArrayList<Estudante>();
+
 	 var turma = new ArrayList<Turma>();
 
 	 var option =-1;
 
 	 do{
-
 		  option = ExibirMenu();
 		 switch (option){
 			 case 1:
-				 var turm =Turma.Factories.Create();
+				 var turm = Turma.Factories.Create();
 				 var result = Save(path, turm);
 				 break;
 			 case 2:
@@ -62,7 +67,7 @@ public class Principal {
 				  var resul = Save(path, studen);
 				 break;
 			 case 3:
-				 ListarCadastros(turma);
+				 Listar(path);
 				 break;
 			 case 4:
 				 ListarCadastros(student);
@@ -75,11 +80,8 @@ public class Principal {
 	 	Thread.sleep(220);
 
 	 }while(option != 5);
-
-
  }
  private static <T>  boolean Save(Path path, T data) throws IOException {
-
 	 try {
 		 Files.writeString (path, data.toString()+ "\n",
 				 StandardOpenOption.APPEND);
@@ -91,9 +93,8 @@ public class Principal {
  }
  private static int ExibirMenu(){
 	 var read = new Scanner(System.in);
-
-	 System.out.println("\t[ 1 ] - Cadatrar Turma");
-	 System.out.println("\t[ 2 ] - Cadatrar Estudante");
+	 System.out.println("\t[ 1 ] - Cadatrar br.com.escolinha.gestaoescolar.dominio.Turma");
+	 System.out.println("\t[ 2 ] - Cadatrar br.com.escolinha.gestaoescolar.dominio.Estudante");
 	 System.out.println("\t[ 3 ] - Listar Turmas");
 	 System.out.println("\t[ 4 ] - Listar Estudantes");
 	 System.out.println("\t[ 5 ] - Sair");
@@ -103,15 +104,18 @@ public class Principal {
 	 return  option;
  }
  private static  <T> void ListarCadastros(ArrayList<T> list){
-
 	 if(!list.isEmpty()) {
 		 for (T item : list){
 			 System.out.println(item.toString());
 		 }
 		 return;
 	 }
-
 	 System.out.println("Lista vazia");
  }
-
+ private  static  void Listar(Path file) throws IOException {
+	 var dados = Files.readAllLines(file);
+	 for(var d : dados){
+		 System.out.println(d.toString());
+	 }
+ }
 }

@@ -1,3 +1,5 @@
+package br.com.escolinha.gestaoescolar.dominio;
+
 import java.util.Scanner;
 import java.util.UUID;
 
@@ -21,7 +23,7 @@ public class Turma {
 
 	@Override
 	public String toString() {
-		return "Turma{" +
+		return "br.com.escolinha.gestaoescolar.dominio.Turma{" +
 				"id=" + id +
 				", codigo=" + codigo +
 				", turma='" + turma + '\'' +
@@ -57,7 +59,7 @@ public class Turma {
 			 System.out.print("Codigo: ");
 			 codigo = scanner.nextInt();
 			 System.out.print("");
-			 System.out.print("Turma: ");
+			 System.out.print("br.com.escolinha.gestaoescolar.dominio.Turma: ");
 			 turma = scanner.next();
 			 System.out.print("");
 			 System.out.print("Capacidade: ");

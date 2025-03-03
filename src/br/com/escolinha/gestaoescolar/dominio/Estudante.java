@@ -1,3 +1,5 @@
+package br.com.escolinha.gestaoescolar.dominio;
+
 import java.util.Scanner;
 import java.util.UUID;
 
@@ -39,7 +41,7 @@ public class Estudante {
 
 	@Override
 	public String toString() {
-		return "Estudante{" +
+		return "br.com.escolinha.gestaoescolar.dominio.Estudante{" +
 				"id=" + id +
 				", name='" + name + '\'' +
 				", cellPhone='" + cellPhone + '\'' +

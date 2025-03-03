@@ -1,4 +1,4 @@
-import java.util.HashMap;
+package br.com.escolinha.gestaoescolar.funcionalidades;
 
 public class Conta {
 
