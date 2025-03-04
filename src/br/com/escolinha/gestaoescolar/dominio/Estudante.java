@@ -4,12 +4,12 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class Estudante {
-
+	//regra constatnte static final caixa alta
 	private UUID id;
-	private  String name;
+	private String name;
 	private String cellPhone;
 	private String address;
-    public String responsible;
+	public String responsible;
 
 	private Estudante(String name, String cellPhone, String address, String responsible) {
 		this.id = UUID.randomUUID();
@@ -19,9 +19,9 @@ public class Estudante {
 		this.responsible = responsible;
 	}
 
-	 public void  UpdateCellPhone(String cellPhone){
+	public void UpdateCellPhone(String cellPhone) {
 		this.cellPhone = cellPhone;
- 	}
+	}
 
 	public String getName() {
 		return name;
@@ -50,8 +50,8 @@ public class Estudante {
 				'}';
 	}
 
-	public static class Factories{
-		public static  Estudante Create(){
+	public static class Factories {
+		public static Estudante Create() {
 
 			var scanner = new Scanner(System.in);
 			String name;
@@ -72,7 +72,7 @@ public class Estudante {
 			responsible = scanner.next();
 			System.out.print("");
 
-			return  new Estudante(name, cellPhone, address, responsible);
+			return new Estudante(name, cellPhone, address, responsible);
 		}
 	}
 }

@@ -1,0 +1,1 @@
+Estudante{id=591869d8-9a27-4556-bd0e-bccb22c7a532, CPF='12345', Email='teste@teste.com', Telefone='93939393', endereco=Endereco{id=a1ea979b-46d8-4704-9896-c107a88846fc, rua='alameda', tipoAcesso=ALSFALTO, numero=3124, bairro='teste'}}

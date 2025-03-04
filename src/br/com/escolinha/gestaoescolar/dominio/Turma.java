@@ -5,16 +5,16 @@ import java.util.UUID;
 
 public class Turma {
 
-	private  UUID id;
-    private int codigo;
+	private UUID id;
+	private int codigo;
 	private String turma;
-	private  int capacidade;
+	private int capacidade;
+	private Periodo periodo;
 
 	private Turma(
 			int codigo,
 			String turma,
-			int capacidade)
-	{
+			int capacidade) {
 		id = UUID.randomUUID();
 		this.codigo = codigo;
 		this.turma = turma;
@@ -31,7 +31,7 @@ public class Turma {
 				'}';
 	}
 
-	public  void Update(Turma turma){
+	public void Update(Turma turma) {
 		this.capacidade = turma.capacidade;
 		this.turma = turma.turma;
 		this.codigo = turma.codigo;
@@ -40,6 +40,7 @@ public class Turma {
 	public int getCodigo() {
 		return codigo;
 	}
+
 	public String getTurma() {
 		return turma;
 	}
@@ -48,26 +49,26 @@ public class Turma {
 		return capacidade;
 	}
 
-	public static  class  Factories{
-		 public static  Turma Create(){
+	public static class Factories {
+		public static Turma Create() {
 
-			 var scanner = new Scanner(System.in);
-			 int codigo;
-			 String turma;
-			 int capacidade;
+			var scanner = new Scanner(System.in);
+			int codigo;
+			String turma;
+			int capacidade;
 
-			 System.out.print("Codigo: ");
-			 codigo = scanner.nextInt();
-			 System.out.print("");
-			 System.out.print("br.com.escolinha.gestaoescolar.dominio.Turma: ");
-			 turma = scanner.next();
-			 System.out.print("");
-			 System.out.print("Capacidade: ");
-			 capacidade = scanner.nextInt();
+			System.out.print("Codigo: ");
+			codigo = scanner.nextInt();
+			System.out.print("");
+			System.out.print("br.com.escolinha.gestaoescolar.dominio.Turma: ");
+			turma = scanner.next();
+			System.out.print("");
+			System.out.print("Capacidade: ");
+			capacidade = scanner.nextInt();
 
-			return  new Turma(codigo, turma, capacidade);
+			return new Turma(codigo, turma, capacidade);
 		}
-   }
+	}
 
 }
 
