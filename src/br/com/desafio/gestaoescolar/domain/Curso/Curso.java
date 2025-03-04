@@ -35,15 +35,18 @@ public class Curso {
 
 	@Override
 	public String toString() {
-		return "Curso{" +
-				"id=" + id +
-				", nome='" + nome + '\'' +
-				", cargaHoraria=" + cargaHoraria +
-				", nivel=" + nivel +
-				'}';
+		return
+				id +
+						"," + nome +
+						"," + cargaHoraria +
+						"," + nivel;
 	}
 
 	public static class Factories {
+
+		public static Curso CreateWithParameters(String nome, LocalTime cargaHoraria, String nivel) {
+			return new Curso(nome, cargaHoraria, Enum.valueOf(Nivel.class, nivel));
+		}
 
 		public static Curso Create() {
 

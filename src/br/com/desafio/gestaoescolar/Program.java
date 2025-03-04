@@ -3,10 +3,7 @@ package br.com.desafio.gestaoescolar;
 import br.com.desafio.gestaoescolar.domain.Curso.Curso;
 import br.com.desafio.gestaoescolar.domain.Estudante.Estudante;
 import br.com.desafio.gestaoescolar.domain.Turma.Turma;
-import br.com.desafio.gestaoescolar.services.CreateCourseService;
-import br.com.desafio.gestaoescolar.services.CreateStudentService;
-import br.com.desafio.gestaoescolar.services.FindDataInFile;
-import br.com.desafio.gestaoescolar.services.ListDataInFile;
+import br.com.desafio.gestaoescolar.services.*;
 
 import java.util.Scanner;
 import java.util.UUID;
@@ -31,6 +28,18 @@ public class Program {
 					if (CreateCourseService.Create(curso))
 						System.out.println("Course created with success");
 					break;
+				case 3:
+					var classNameCr = GetClassName();
+					System.out.println("Informe o ID: ");
+					var idCourse = read.next();
+					var data = FindDataInFile.Find(classNameCr, UUID.fromString(idCourse));
+					var classs = Turma.Facotries.Create(data);
+					if (CreateTurmaService.Create(classs))
+						System.out.println("Class created with success");
+					break;
+				case 4:
+					ListDataInFile.GetDataInFile(Turma.class.getName());
+					break;
 				case 5:
 					ListDataInFile.GetDataInFile(Estudante.class.getName());
 					break;
@@ -44,6 +53,7 @@ public class Program {
 					System.out.println(FindDataInFile.Find(className, UUID.fromString(id)).toString());
 					break;
 				default:
+					System.out.println("Invalid operation");
 					break;
 
 			}

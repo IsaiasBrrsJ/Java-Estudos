@@ -42,13 +42,13 @@ public class Estudante {
 
 	@Override
 	public String toString() {
-		return "Estudante{" +
-				",id=" + id +
-				",CPF='" + CPF + '\'' +
-				",Email='" + Email + '\'' +
-				",Telefone='" + Telefone + '\'' +
-				",endereco=" + endereco +
-				'}';
+		return
+				id +
+						"," + CPF +
+						"," + Email +
+						"," + Telefone +
+						"," + endereco;
+
 	}
 
 	public static class Factories {

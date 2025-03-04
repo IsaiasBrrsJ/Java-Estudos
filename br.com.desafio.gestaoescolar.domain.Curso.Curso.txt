@@ -1,2 +1,1 @@
-Curso{id=eaf33ae1-6fe9-417b-aee1-510d68f26a53, nome='java basic', cargaHoraria=10:30, nivel=INTERMEDIARIO}
-Curso{id=30cc9bae-406e-4cd2-b580-a3c7145d1800, nome='java basic', cargaHoraria=10:30, nivel=AVANCADO}
+90e3ea17-9b35-43e3-8f50-982753123bcd,java basic,10:30,BASIC

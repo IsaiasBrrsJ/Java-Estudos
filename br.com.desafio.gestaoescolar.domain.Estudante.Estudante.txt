@@ -1,1 +1,1 @@
-Estudante{id=591869d8-9a27-4556-bd0e-bccb22c7a532, CPF='12345', Email='teste@teste.com', Telefone='93939393', endereco=Endereco{id=a1ea979b-46d8-4704-9896-c107a88846fc, rua='alameda', tipoAcesso=ALSFALTO, numero=3124, bairro='teste'}}
+9ceeceef-def3-43ea-b324-66eb66e4f0ae,12345,teste@teste.com,3123123,a648207e-2059-48de-88af-9383fb68b586,alameda,ALSFALTO,3333,apts

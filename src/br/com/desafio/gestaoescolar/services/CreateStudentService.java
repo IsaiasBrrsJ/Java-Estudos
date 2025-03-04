@@ -12,6 +12,7 @@ public class CreateStudentService {
 
 		if (ValidateIfCPFIsUnique(estudante.getCPF()) &&
 				ValidateIfEmailIsUnique(estudante.getEmail())) {
+
 			System.out.println("EMAIL AND CPF  SHOULD BE UNIQUE");
 
 			return false;

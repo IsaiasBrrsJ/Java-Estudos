@@ -41,13 +41,13 @@ public final class Endereco {
 
 	@Override
 	public String toString() {
-		return "Endereco{" +
-				",id=" + id +
-				",rua='" + rua + '\'' +
-				",tipoAcesso=" + tipoAcesso +
-				",numero=" + numero +
-				",bairro='" + bairro + '\'' +
-				'}';
+		return
+				id +
+						"," + rua +
+						"," + tipoAcesso +
+						"," + numero +
+						"," + bairro;
+
 	}
 
 	public static class Factories {
